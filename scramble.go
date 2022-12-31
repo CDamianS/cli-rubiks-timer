@@ -2,10 +2,10 @@ package main
 
 import (
 	"math/rand"
-	// "strings"
 	"time"
 )
 
+// Returns random letter for a move
 func returnLetter() string {
 	rand.Seed(time.Now().UnixNano())
 	const letters = "UDLRFB"
@@ -13,6 +13,7 @@ func returnLetter() string {
 	return string(letter)
 }
 
+// Returns an indicator for prime and double moves
 func returnIndicator() string {
 	rand.Seed(time.Now().UnixNano())
 	ind := rand.Intn(3)
@@ -26,6 +27,7 @@ func returnIndicator() string {
 	}
 }
 
+// Merges letter and indicator in a string
 func getScramble() string {
 	rand.Seed(time.Now().UnixNano())
 	var scramble string
@@ -34,6 +36,7 @@ func getScramble() string {
 	scramble = returnLetter() + returnIndicator()
 	for i < 25 {
 		moveArr[i] = returnLetter()
+		// Check if the move is the same as the previous one
 		if moveArr[i] != moveArr[i-1] {
 			scramble = scramble + " " + moveArr[i] + returnIndicator()
 			i++
