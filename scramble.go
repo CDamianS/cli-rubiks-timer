@@ -29,12 +29,10 @@ func returnIndicator() string {
 
 // Merges letter and indicator in a string
 func getScramble() string {
-	rand.Seed(time.Now().UnixNano())
 	var scramble string
 	var moveArr [25]string
 	i := 1
-	scramble = returnLetter() + returnIndicator()
-	for i < 25 {
+	for i < rand.Intn(5)+20 {
 		moveArr[i] = returnLetter()
 		// Check if the move is the same as the previous one
 		if moveArr[i] != moveArr[i-1] {
