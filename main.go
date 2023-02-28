@@ -75,12 +75,12 @@ func main() {
 		stopwatch: stopwatch.NewWithInterval(time.Millisecond),
 		keymap: keymap{
 			start: key.NewBinding(
-				key.WithKeys("space"),
-				key.WithHelp("space", "start"),
+				key.WithKeys(" "),
+				key.WithHelp(" ", "start"),
 			),
 			stop: key.NewBinding(
-				key.WithKeys("space"),
-				key.WithHelp("space", "stop"),
+				key.WithKeys(" "),
+				key.WithHelp(" ", "stop"),
 			),
 			reset: key.NewBinding(
 				key.WithKeys("r"),
